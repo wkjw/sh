@@ -69,7 +69,7 @@ config_xray() {
 
     for ((i = 0; i < ${#IPV6_ADDRESSES[@]}; i++)); do
         ipv6=${IPV6_ADDRESSES[i]}
-        port=$((port_counter + i))  # 计算当前节点的端口
+        port=$((port_counter + i + 1))  # 计算当前节点的端口
         
         if [ "$config_type" == "shadowsocks" ]; then
             config_content+="- { name: $ipv6, type: ss, server: \"$ipv6\", port: $port, cipher: $SS_METHOD, password: $SS_PASSWORD, udp: true }\n"

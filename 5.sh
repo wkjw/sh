@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # === 基本配置 ===
-START_PORT=30000
-USERNAME="user"
-PASSWORD="pass"
+START_PORT=10000
+USERNAME="w001"
+PASSWORD="w001"
 
 # === 自动检测公网网卡（非 lo/docker）===
 INTERFACE=$(ip -o -6 addr show scope global | awk '!/docker|lo/ {print $2}' | head -n1)

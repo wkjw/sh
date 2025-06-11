@@ -43,6 +43,8 @@ log /var/log/3proxy.log D
 EOF
 
     for ((i=0; i<$COUNT; i++)); do
+    
+    PORT=$((PORT_BASE + i))
     # 生成4个16位16进制块（后64位）
     HEX=$(printf '%04x:%04x:%04x:%04x' $((RANDOM%65536)) $((RANDOM%65536)) $((RANDOM%65536)) $((RANDOM%65536)))
     FULL_IPV6="${IPV6_PREFIX}:${HEX}"

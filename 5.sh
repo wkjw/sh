@@ -5,15 +5,7 @@ START_PORT=10000
 USERNAME="w001"
 PASSWORD="w001"
 
-# === 自动检测公网网卡（非 lo/docker）===
-INTERFACE=$(ip -o -6 addr show scope global | awk '!/docker|lo/ {print $2}' | head -n1)
-
-if [[ -z "$INTERFACE" ]]; then
-  echo "❌ 无法检测公网网卡，请手动设置 INTERFACE"
-  exit 1
-fi
-
-echo "🌐 检测到公网接口：$INTERFACE"
+INTERFACE="eth0"
 
 # === 安装 dante-server ===
 apt update && apt install -y dante-server

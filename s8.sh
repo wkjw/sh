@@ -43,9 +43,10 @@ log /var/log/3proxy.log D
 EOF
 
     for ((i=0; i<$COUNT; i++)); do
-        HEX=$(printf '%x:%x:%x:%x' $RANDOM $RANDOM $RANDOM $RANDOM)
-        FULL_IPV6="${IPV6_PREFIX}:${HEX}"
-        PORT=$((PORT_BASE + i))
+    # 生成4个16位16进制块（后64位）
+    HEX=$(printf '%04x:%04x:%04x:%04x' $((RANDOM%65536)) $((RANDOM%65536)) $((RANDOM%65536)) $((RANDOM%65536)))
+    FULL_IPV6="${IPV6_PREFIX}:${HEX}"
+
 
         # 绑定 IPv6
         ip -6 addr add "$FULL_IPV6"/64 dev "$INTERFACE"

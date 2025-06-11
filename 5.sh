@@ -4,7 +4,6 @@
 START_PORT=10000
 USERNAME="w001"
 PASSWORD="w001"
-
 INTERFACE="eth0"
 
 # === 安装 dante-server ===
@@ -49,7 +48,7 @@ socks pass {
 EOT
 
     # 写入 socks5 代理信息
-    echo "${USERNAME}:${PASSWORD}@[${IPV6}]:${PORT}" >> socks5_list.txt
+    echo "[${IPV6}]:${PORT}:${USERNAME}:${PASSWORD}" >> socks5_list.txt
 done
 
 # === 创建认证用户 ===

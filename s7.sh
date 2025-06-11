@@ -24,8 +24,8 @@ function install_3proxy() {
 
 function generate_ipv6_list() {
     IPV6_BASE=$(ip -6 addr show "$INTERFACE" | grep -oP 'inet6 \K[0-9a-f:]+(?=/)' | grep -v fe80 | head -n 1)
-    echo "🧠 基础 IPv6 地址：$IPV6_BASE"
     IPV6_PREFIX=${IPV6_PREFIX/%::/}
+    echo "🧠 基础 IPv6 地址：$IPV6_BASE"
 
     > "$ACCOUNT_FILE"
     > "$BIND_PREFIX_FILE"
@@ -44,7 +44,7 @@ EOF
 
     for ((i=0; i<$COUNT; i++)); do
         HEX=$(printf '%x:%x:%x:%x' $RANDOM $RANDOM $RANDOM $RANDOM)
-        FULL_IPV6="${IPV6_BASE}::${HEX}"
+        FULL_IPV6="${IPV6_PREFIX}:${HEX}"
         PORT=$((PORT_BASE + i))
 
         # 绑定 IPv6

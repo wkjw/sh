@@ -1,0 +1,666 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: '127.0.0.1:9090'
+dns:
+    enable: true
+    ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29]
+    enhanced-mode: fake-ip
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+proxies:
+  - {name: 🇦🇺 澳大利亚2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23125, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇫🇷 法国2-1A, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23119, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇫🇷 法国1-1A, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23118, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇹🇷 土耳其1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23400, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇰🇷 韩国2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23111, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇸🇬 新加坡03|LELP|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23512, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 日本1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23104, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇨🇦 加拿大2-1A, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23123, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇩🇪 德国1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23334, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇭🇰 香港1-1A, server: flyxg.flylink.cyou, port: 35290, type: hysteria2, password: a21e934f-4541-4472-97a8-f2cc1a7b116c, auth: a21e934f-4541-4472-97a8-f2cc1a7b116c, sni: flyxg.flylink.cyou, skip-cert-verify: true, obfs: salamander, obfs-password: ZWYxYjI3YjlmY2I0OGEwYw==, udp: true}
+  - {name: 🇹🇼 台湾3, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23103, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇲🇾 马来西亚专线NO1, server: haa.dashuai.cyou, port: 45058, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇨🇦 加拿大2-1B, server: xdd.dashuai.cyou, port: 45065, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇯🇵 日本03|LELP|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23617, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 香港03|LELP|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23502, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇮🇳 印度2-1A, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23131, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇫🇷 法国1-1B, server: haa.dashuai.cyou, port: 45072, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇮🇹 意大利2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23143, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇺🇸 美国NO.2, server: xdd.dashuai.cyou, port: 45053, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇸🇬 新加坡4, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23407, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇵🇱 波兰1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23140, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇬🇧 英国, server: flyyg.flylink.cyou, port: 35240, type: hysteria2, password: a21e934f-4541-4472-97a8-f2cc1a7b116c, auth: a21e934f-4541-4472-97a8-f2cc1a7b116c, sni: flyyg.flylink.cyou, skip-cert-verify: true, obfs: salamander, obfs-password: ZWYxYjI3YjlmY2I0OGEwYw==, udp: true}
+  - {name: 🇰🇷 韩国, server: flyhg.flylink.cyou, port: 35310, type: hysteria2, password: a21e934f-4541-4472-97a8-f2cc1a7b116c, auth: a21e934f-4541-4472-97a8-f2cc1a7b116c, sni: flyhg.flylink.cyou, skip-cert-verify: true, obfs: salamander, obfs-password: ZWYxYjI3YjlmY2I0OGEwYw==, udp: true}
+  - {name: 🇭🇰 香港3, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23300, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇦🇪 阿联酋1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23157, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇬🇧 英国2-1B, server: xdd.dashuai.cyou, port: 45067, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇳🇱 荷兰, server: flyhl.flylink.cyou, port: 35250, type: hysteria2, password: a21e934f-4541-4472-97a8-f2cc1a7b116c, auth: a21e934f-4541-4472-97a8-f2cc1a7b116c, sni: flyhl.flylink.cyou, skip-cert-verify: true, obfs: salamander, obfs-password: ZWYxYjI3YjlmY2I0OGEwYw==, udp: true}
+  - {name: 🇮🇩 印尼1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23138, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇬🇧 英国1-1B, server: haa.dashuai.cyou, port: 45066, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇹🇼 台湾2-1B, server: xdd.dashuai.cyou, port: 45077, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇺🇸 美国3, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23116, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇺🇸 美国03|LEPL|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23523, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 香港NO.2, server: xdd.dashuai.cyou, port: 45051, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇭🇰 香港06|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23505, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇬🇧 英国1-1A, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23112, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇨🇦 加拿大, server: flyjnd.flylink.cyou, port: 35280, type: hysteria2, password: a21e934f-4541-4472-97a8-f2cc1a7b116c, auth: a21e934f-4541-4472-97a8-f2cc1a7b116c, sni: flyjnd.flylink.cyou, skip-cert-verify: true, obfs: salamander, obfs-password: ZWYxYjI3YjlmY2I0OGEwYw==, udp: true}
+  - {name: 🇰🇷 韩国 专线NO2, server: xdd.dashuai.cyou, port: 45075, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 伊拉克1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23136, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇹🇭 泰国NO1, server: haa.dashuai.cyou, port: 45060, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇯🇵 日本2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23105, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇵🇭 菲律宾1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23134, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇱🇻 拉脱维亚1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23151, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇹🇼 台湾02|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23507, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23108, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇭🇰 香港01|LELP|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23499, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国-拉斯维加斯-HY-003-1C, server: 45.135.135.229, port: 80, type: hysteria2, password: fc03dbad-952f-49cf-bdaa-7e8dedc67c06, auth: fc03dbad-952f-49cf-bdaa-7e8dedc67c06, up: 100, down: 100, skip-cert-verify: true, obfs: salamander, obfs-password: OGU1NTEyMGE2ZDhkODdhOQ==, udp: true}
+  - {name: 🇷🇺 俄罗斯2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23145, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇭🇰 香港-1A, server: flyxghy.flylink.cyou, port: 35260, type: hysteria2, password: a21e934f-4541-4472-97a8-f2cc1a7b116c, auth: a21e934f-4541-4472-97a8-f2cc1a7b116c, sni: flyxghy.flylink.cyou, skip-cert-verify: true, obfs: salamander, obfs-password: ZWYxYjI3YjlmY2I0OGEwYw==, udp: true}
+  - {name: 🇩🇪 德国2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23115, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇲🇾 马来西亚专线NO2, server: xdd.dashuai.cyou, port: 45059, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇻🇳 越南2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23133, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇯🇵 日本NO.2, server: xdd.dashuai.cyou, port: 45057, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇫🇷 法国2-1B, server: xdd.dashuai.cyou, port: 45071, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇺🇸 美国04|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23521, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇮🇳 印度2-1B, server: xdd.dashuai.cyou, port: 45073, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇩🇪 德国, server: flydg.flylink.cyou, port: 35230, type: hysteria2, password: a21e934f-4541-4472-97a8-f2cc1a7b116c, auth: a21e934f-4541-4472-97a8-f2cc1a7b116c, sni: flydg.flylink.cyou, skip-cert-verify: true, obfs: salamander, obfs-password: ZWYxYjI3YjlmY2I0OGEwYw==, udp: true}
+  - {name: 🇭🇰 香港05|LELP|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23504, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国-拉斯维加斯-HY-002-1C, server: 45.135.135.229, port: 33079, type: hysteria2, password: fc03dbad-952f-49cf-bdaa-7e8dedc67c06, auth: fc03dbad-952f-49cf-bdaa-7e8dedc67c06, up: 100, down: 100, skip-cert-verify: true, obfs: salamander, obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==, udp: true}
+  - {name: 🇹🇼 台湾04|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23509, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国4, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23117, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇳🇬 尼日利亚2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23150, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇹🇼 台湾03|LELP|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23508, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇮🇳 印度1-1B, server: haa.dashuai.cyou, port: 45074, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: JG-EFO, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23501, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 日本NO.1, server: haa.dashuai.cyou, port: 45056, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇸🇬 新加坡04|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23513, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国-拉斯维加斯-HY-002-1B, server: 45.135.135.229, port: 33079, type: hysteria2, password: 13f5bebd-f37c-44e0-ba3b-261785cdc5c6, auth: 13f5bebd-f37c-44e0-ba3b-261785cdc5c6, up: 100, down: 100, skip-cert-verify: true, obfs: salamander, obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==, udp: true}
+  - {name: 🇸🇬 新加坡02|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23511, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇮🇩 印尼2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23139, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇱🇻 拉脱维亚2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23152, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇸🇬 新加坡NO.1, server: haa.dashuai.cyou, port: 45054, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇮🇹 意大利1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23142, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇰🇷 韩国 专线NO1, server: haa.dashuai.cyou, port: 45076, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇷🇺 俄罗斯, server: flyels.flylink.cyou, port: 35270, type: hysteria2, password: a21e934f-4541-4472-97a8-f2cc1a7b116c, auth: a21e934f-4541-4472-97a8-f2cc1a7b116c, sni: flyels.flylink.cyou, skip-cert-verify: true, obfs: salamander, obfs-password: ZWYxYjI3YjlmY2I0OGEwYw==, udp: true}
+  - {name: 🇨🇦 加拿大1-1B, server: haa.dashuai.cyou, port: 45064, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇵🇭 菲律宾2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23203, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇪🇸 西班牙1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23209, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇯🇵 日本04|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23517, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇦🇪 阿联酋2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23158, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇺🇸 美国-拉斯维加斯-003-1B, server: 45.135.135.229, port: 25005, type: vmess, uuid: 13f5bebd-f37c-44e0-ba3b-261785cdc5c6, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: 🇺🇸 美国2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23109, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇭🇰 香港-1B, server: xg.dashuai.cyou, port: 19901, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇦🇺 澳大利亚原生2, server: xdd.dashuai.cyou, port: 45063, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇸🇬 新加坡3, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23107, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇳🇱 荷兰2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23256, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇺🇸 美国01|LEPL|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23524, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇹🇭 泰国2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23127, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇪🇸 西班牙2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23210, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇹🇷 土耳其2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23121, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇹🇭 泰国NO2, server: xdd.dashuai.cyou, port: 45061, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇹🇼 台湾2-1A, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23208, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇹🇼 台湾4, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23207, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇹🇼 台湾01|LELP|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23506, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇱🇹 立陶宛2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23153, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇵🇱 波兰2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23141, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇷🇺 俄罗斯1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23144, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇳🇱 荷兰1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23155, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 伊拉克2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23137, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇰🇷 韩国1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23110, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇦🇺 澳大利亚原生1, server: haa.dashuai.cyou, port: 45062, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇸🇬 新加坡1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23106, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇭🇰 香港2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23200, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇸🇬 新加坡NO.2, server: xdd.dashuai.cyou, port: 45055, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇭🇰 香港4, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23101, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇳🇬 尼日利亚1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23149, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇯🇵 日本02|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23515, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇸🇬 新加坡2, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23401, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇭🇰 香港1-1B, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23100, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇦🇺 澳大利亚1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23124, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇺🇸 美国-拉斯维加斯-HY-003-1B, server: 45.135.135.229, port: 80, type: hysteria2, password: 13f5bebd-f37c-44e0-ba3b-261785cdc5c6, auth: 13f5bebd-f37c-44e0-ba3b-261785cdc5c6, up: 100, down: 100, skip-cert-verify: true, obfs: salamander, obfs-password: OGU1NTEyMGE2ZDhkODdhOQ==, udp: true}
+  - {name: 🇬🇧 英国2-1A, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23113, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇱🇹 立陶宛1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23154, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇺🇸 美国NO.1, server: haa.dashuai.cyou, port: 45052, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇯🇵 日本, server: flyrb.flylink.cyou, port: 35300, type: hysteria2, password: a21e934f-4541-4472-97a8-f2cc1a7b116c, auth: a21e934f-4541-4472-97a8-f2cc1a7b116c, sni: flyxg.flylink.cyou, skip-cert-verify: true, obfs: salamander, obfs-password: ZWYxYjI3YjlmY2I0OGEwYw==, udp: true}
+  - {name: 🇹🇭 泰国1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23126, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇺🇸 美国02|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23519, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国-拉斯维加斯-HY-002-1A, server: 45.135.135.229, port: 33079, type: hysteria2, password: bfa8102f-342b-4830-827e-c56b56b3b73e, auth: bfa8102f-342b-4830-827e-c56b56b3b73e, up: 100, down: 100, skip-cert-verify: true, obfs: salamander, obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==, udp: true}
+  - {name: 🇹🇼 台湾1-1A, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23102, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇺🇸 美国-拉斯维加斯-HY-003-1A, server: 45.135.135.229, port: 80, type: hysteria2, password: bfa8102f-342b-4830-827e-c56b56b3b73e, auth: bfa8102f-342b-4830-827e-c56b56b3b73e, up: 100, down: 100, skip-cert-verify: true, obfs: salamander, obfs-password: OGU1NTEyMGE2ZDhkODdhOQ==, udp: true}
+  - {name: 🇭🇰 香港04|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23503, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇸🇬 新加坡01|LELP|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23510, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇲🇾 马来西亚02|BGP|1x, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23526, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇹🇼 台湾1-1B, server: haa.dashuai.cyou, port: 45078, type: vmess, uuid: 48240b53-0d1d-44ea-b927-dd08d70d4421, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇮🇳 印度1-1A, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23130, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇺🇸 美国-拉斯维加斯-003-1C, server: 45.135.135.229, port: 25005, type: vmess, uuid: fc03dbad-952f-49cf-bdaa-7e8dedc67c06, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: 🇨🇦 加拿大1-1A, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23122, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇺🇸 美国-拉斯维加斯-003-1A, server: 45.135.135.229, port: 25005, type: vmess, uuid: bfa8102f-342b-4830-827e-c56b56b3b73e, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: 🇯🇵 日本01|LELP|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23514, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+  - {name: 🇻🇳 越南1, server: e4d7a1c2f3b80976a5e2c1d4b3f0a987.1kmei.com, port: 23132, type: ss, cipher: chacha20-ietf-poly1305, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, udp: true}
+  - {name: 🇲🇾 马来西亚01|LEPL|1x, server: c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8.1kmei.com, port: 23525, type: trojan, password: bf6f034c-9f56-4c53-814e-fb1d0510afd1, sni: cn.bing.com, skip-cert-verify: true, udp: true}
+proxy-groups:
+    - { name: 列表, type: select, proxies: [🇯🇵 日本1] }
+    - { name: 自动选择, type: url-test, proxies: [🇯🇵 日本1], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: 故障转移, type: fallback, proxies: [🇯🇵 日本1], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+rules:
+    - 'DOMAIN,ls.yueyanyimei.xyz,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,services.googleapis.cn,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🇯🇵 日本1'
+    - 'DOMAIN,safebrowsing.urlsec.qq.com,🇯🇵 日本1'
+    - 'DOMAIN,safebrowsing.googleapis.com,🇯🇵 日本1'
+    - 'DOMAIN,developer.apple.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,digicert.com,🇯🇵 日本1'
+    - 'DOMAIN,ocsp.apple.com,🇯🇵 日本1'
+    - 'DOMAIN,ocsp.comodoca.com,🇯🇵 日本1'
+    - 'DOMAIN,ocsp.usertrust.com,🇯🇵 日本1'
+    - 'DOMAIN,ocsp.sectigo.com,🇯🇵 日本1'
+    - 'DOMAIN,ocsp.verisign.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,apple-dns.net,🇯🇵 日本1'
+    - 'DOMAIN,testflight.apple.com,🇯🇵 日本1'
+    - 'DOMAIN,sandbox.itunes.apple.com,🇯🇵 日本1'
+    - 'DOMAIN,itunes.apple.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,apps.apple.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,blobstore.apple.com,🇯🇵 日本1'
+    - 'DOMAIN,cvws.icloud-content.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mzstatic.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,itunes.apple.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,icloud.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,icloud-content.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,me.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,aaplimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cdn20.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cdn-apple.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,akadns.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,akamaiedge.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,edgekey.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mwcloudcdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mwcname.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,apple.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,apple-cloudkit.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,apple-mapkit.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,126.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,126.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,127.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,163.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,360buyimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,36kr.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,acfun.tv,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,air-matters.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,aixifan.com,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,alicdn,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,alipay,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,taobao,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,amap.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,autonavi.com,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,baidu,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bdimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bdstatic.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bilibili.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bilivideo.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,caiyunapp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,clouddn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cnbeta.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cnbetacdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cootekservice.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,csdn.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ctrip.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,dgtle.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,dianping.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,douban.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,doubanio.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,duokan.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,easou.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ele.me,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,feng.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,fir.im,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,frdic.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,g-cores.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,godic.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,gtimg.com,🇯🇵 日本1'
+    - 'DOMAIN,cdn.hockeyapp.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,hongxiu.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,hxcdn.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,iciba.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ifeng.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ifengimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ipip.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,iqiyi.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,jd.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,jianshu.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,knewone.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,le.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,lecloud.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,lemicp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,licdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,luoo.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,meituan.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,meituan.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mi.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,miaopai.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,microsoft.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,microsoftonline.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,miui.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,miwifi.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mob.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,netease.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,office.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,office365.com,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,officecdn,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,oschina.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ppsimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,pstatp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qcloud.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qdaily.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qdmm.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qhimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qhres.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qidian.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qihucdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qiniu.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qiniucdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qiyipic.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qq.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,qqurl.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,rarbg.to,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ruguoapp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,segmentfault.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sinaapp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,smzdm.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,snapdrop.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sogou.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sogoucdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sohu.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,soku.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,speedtest.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sspai.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,suning.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,taobao.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tencent.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tenpay.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tianyancha.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tmall.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tudou.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,umetrip.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,upaiyun.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,upyun.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,veryzhun.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,weather.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,weibo.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,xiami.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,xiami.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,xiaomicp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ximalaya.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,xmcdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,xunlei.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,yhd.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,yihaodianimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,yinxiang.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ykimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,youdao.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,youku.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,zealer.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,zhihu.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,zhimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,zimuzu.tv,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,zoho.com,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,amazon,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,google,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,gmail,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,youtube,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,facebook,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,fb.me,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,fbcdn.net,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,twitter,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,instagram,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,dropbox,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,twimg.com,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,blogspot,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,youtu.be,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,whatsapp,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,admarvel,REJECT'
+    - 'DOMAIN-KEYWORD,admaster,REJECT'
+    - 'DOMAIN-KEYWORD,adsage,REJECT'
+    - 'DOMAIN-KEYWORD,adsmogo,REJECT'
+    - 'DOMAIN-KEYWORD,adsrvmedia,REJECT'
+    - 'DOMAIN-KEYWORD,adwords,REJECT'
+    - 'DOMAIN-KEYWORD,adservice,REJECT'
+    - 'DOMAIN-SUFFIX,appsflyer.com,REJECT'
+    - 'DOMAIN-KEYWORD,domob,REJECT'
+    - 'DOMAIN-SUFFIX,doubleclick.net,REJECT'
+    - 'DOMAIN-KEYWORD,duomeng,REJECT'
+    - 'DOMAIN-KEYWORD,dwtrack,REJECT'
+    - 'DOMAIN-KEYWORD,guanggao,REJECT'
+    - 'DOMAIN-KEYWORD,lianmeng,REJECT'
+    - 'DOMAIN-SUFFIX,mmstat.com,REJECT'
+    - 'DOMAIN-KEYWORD,mopub,REJECT'
+    - 'DOMAIN-KEYWORD,omgmta,REJECT'
+    - 'DOMAIN-KEYWORD,openx,REJECT'
+    - 'DOMAIN-KEYWORD,partnerad,REJECT'
+    - 'DOMAIN-KEYWORD,pingfore,REJECT'
+    - 'DOMAIN-KEYWORD,supersonicads,REJECT'
+    - 'DOMAIN-KEYWORD,uedas,REJECT'
+    - 'DOMAIN-KEYWORD,umeng,REJECT'
+    - 'DOMAIN-KEYWORD,usage,REJECT'
+    - 'DOMAIN-SUFFIX,vungle.com,REJECT'
+    - 'DOMAIN-KEYWORD,wlmonitor,REJECT'
+    - 'DOMAIN-KEYWORD,zjtoolbar,REJECT'
+    - 'DOMAIN-SUFFIX,9to5mac.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,abpchina.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,adblockplus.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,adobe.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,akamaized.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,alfredapp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,amplitude.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ampproject.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,android.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,angularjs.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,aolcdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,apkpure.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,appledaily.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,appshopper.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,appspot.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,arcgis.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,archive.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,armorgames.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,aspnetcdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,att.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,awsstatic.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,azureedge.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,azurewebsites.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bing.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bintray.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bit.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bit.ly,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bitbucket.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bjango.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bkrtx.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,blog.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,blogcdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,blogger.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,blogsmithmedia.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,blogspot.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,blogspot.hk,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,bloomberg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,box.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,box.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cachefly.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,chromium.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cl.ly,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cloudflare.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cloudfront.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cloudmagic.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cmail19.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cnet.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cocoapods.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,comodoca.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,crashlytics.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,culturedcode.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,d.pr,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,danilo.to,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,dayone.me,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,db.tt,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,deskconnect.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,disq.us,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,disqus.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,disquscdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,dnsimple.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,docker.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,dribbble.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,droplr.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,duckduckgo.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,dueapp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,dytt8.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,edgecastcdn.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,edgekey.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,edgesuite.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,engadget.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,entrust.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,eurekavpt.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,evernote.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,fabric.io,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,fast.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,fastly.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,fc2.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,feedburner.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,feedly.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,feedsportal.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,fiftythree.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,firebaseio.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,flexibits.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,flickr.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,flipboard.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,g.co,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,gabia.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,geni.us,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,gfx.ms,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ggpht.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ghostnoteapp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,git.io,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,github,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,globalsign.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,gmodules.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,godaddy.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,golang.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,gongm.in,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,goo.gl,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,goodreaders.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,goodreads.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,gravatar.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,gstatic.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,gvt0.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,hockeyapp.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,hotmail.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,icons8.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ifixit.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ift.tt,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ifttt.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,iherb.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,imageshack.us,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,img.ly,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,imgur.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,imore.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,instapaper.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ipn.li,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,is.gd,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,issuu.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,itgonglun.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,itun.es,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ixquick.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,j.mp,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,js.revsci.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,jshint.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,jtvnw.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,justgetflux.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,kat.cr,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,klip.me,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,libsyn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,linkedin.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,line-apps.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,linode.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,lithium.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,littlehj.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,live.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,live.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,livefilestore.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,llnwd.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,macid.co,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,macromedia.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,macrumors.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mashable.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mathjax.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,medium.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mega.co.nz,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mega.nz,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,megaupload.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,microsofttranslator.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mindnode.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,mobile01.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,modmyi.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,msedge.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,myfontastic.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,name.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,nextmedia.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,nsstatic.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,nssurge.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,nyt.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,nytimes.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,omnigroup.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,onedrive.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,onenote.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ooyala.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,openvpn.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,openwrt.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,orkut.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,osxdaily.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,outlook.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ow.ly,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,paddleapi.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,parallels.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,parse.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,pdfexpert.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,periscope.tv,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,pinboard.in,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,pinterest.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,pixelmator.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,pixiv.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,playpcesor.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,playstation.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,playstation.com.hk,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,playstation.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,playstationnetwork.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,pushwoosh.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,rime.im,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,servebom.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sfx.ms,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,shadowsocks.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sharethis.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,shazam.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,skype.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,smartdns雷神云.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,smartmailcloud.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sndcdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sony.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,soundcloud.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sourceforge.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,spotify.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,squarespace.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,sstatic.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,st.luluku.pw,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,stackoverflow.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,startpage.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,staticflickr.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,steamcommunity.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,symauth.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,symcb.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,symcd.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tapbots.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tapbots.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tdesktop.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,techcrunch.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,techsmith.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,thepiratebay.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,theverge.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,time.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,timeinc.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tiny.cc,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tinypic.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tmblr.co,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,todoist.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,trello.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,trustasiassl.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tumblr.co,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tumblr.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tweetdeck.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,tweetmarker.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,twitch.tv,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,txmblr.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,typekit.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ubertags.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ublock.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ubnt.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ulyssesapp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,urchin.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,usertrust.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,v.gd,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,v2ex.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,vimeo.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,vimeocdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,vine.co,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,vivaldi.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,vox-cdn.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,vsco.co,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,vultr.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,w.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,w3schools.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,webtype.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,wikiwand.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,wikileaks.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,wikimedia.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,wikipedia.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,wikipedia.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,windows.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,windows.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,wire.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,wordpress.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,workflowy.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,wp.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,wsj.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,wsj.net,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,xda-developers.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,xeeno.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,xiti.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,yahoo.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,yimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ying.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,yoyo.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,ytimg.com,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,telegra.ph,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,telegram.org,🇯🇵 日本1'
+    - 'IP-CIDR,91.108.4.0/22,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,91.108.8.0/21,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,91.108.16.0/22,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,91.108.56.0/22,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,149.154.160.0/20,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR6,2001:67c:4e8::/48,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR6,2001:b28:f23d::/48,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR6,2001:b28:f23f::/48,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,120.232.181.162/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,120.241.147.226/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,120.253.253.226/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,120.253.255.162/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,120.253.255.34/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,120.253.255.98/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,180.163.150.162/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,180.163.150.34/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,180.163.151.162/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,180.163.151.34/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,203.208.39.0/24,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,203.208.40.0/24,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,203.208.41.0/24,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,203.208.43.0/24,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,203.208.50.0/24,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,220.181.174.162/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,220.181.174.226/32,🇯🇵 日本1,no-resolve'
+    - 'IP-CIDR,220.181.174.34/32,🇯🇵 日本1,no-resolve'
+    - 'DOMAIN,injections.adguard.org,🇯🇵 日本1'
+    - 'DOMAIN,local.adguard.org,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,local,🇯🇵 日本1'
+    - 'IP-CIDR,127.0.0.0/8,🇯🇵 日本1'
+    - 'IP-CIDR,172.16.0.0/12,🇯🇵 日本1'
+    - 'IP-CIDR,192.168.0.0/16,🇯🇵 日本1'
+    - 'IP-CIDR,10.0.0.0/8,🇯🇵 日本1'
+    - 'IP-CIDR,17.0.0.0/8,🇯🇵 日本1'
+    - 'IP-CIDR,100.64.0.0/10,🇯🇵 日本1'
+    - 'IP-CIDR,224.0.0.0/4,🇯🇵 日本1'
+    - 'IP-CIDR6,fe80::/10,🇯🇵 日本1'
+    - 'DOMAIN-SUFFIX,cn,🇯🇵 日本1'
+    - 'DOMAIN-KEYWORD,-cn,🇯🇵 日本1'
+    - 'GEOIP,CN,🇯🇵 日本1'
+    - 'MATCH,🇯🇵 日本1'
